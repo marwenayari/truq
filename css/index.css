@@ -289,6 +289,30 @@ footer {
   margin: 0;
   object-fit: cover;
   border-radius: 5px;
+  position: relative;
+  z-index: 2;
+}
+.guidelinlk-wrapper {
+  position: relative;
+  display: inline-block;
+}
+.guidelinlk-tooltip {
+  display: none;
+  position: absolute;
+  bottom: 5px;
+  right: 110px;
+  transform: translateX(50%);
+  background: #317c4d;
+  color: #fff;
+  padding: 4px 12px;
+  border-radius: 6px;
+  font-size: 14px;
+  white-space: nowrap;
+  pointer-events: none;
+  z-index: 10;
+}
+.guidelinlk-wrapper:hover .guidelinlk-tooltip {
+  display: block;
 }
 
 /* Banner Section */
