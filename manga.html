@@ -1,0 +1,165 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>المنصة الوطنية للعادات الأصيلة</title>
+  <link rel="stylesheet" href="style.css">
+  <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@400;600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="css/index.css">
+</head>
+
+<body>
+  <!-- Navigation Bar -->
+  <nav class="navbar">
+    <div class="logo">
+      <img src="img/avatar.png" alt="شعار" style="height:36px;width:36px;border-radius:50%;background:#fff;">
+      <span>عاداتنا الأصيلة</span>
+    </div>
+    <div class="actions">
+      <button class="login-btn" id="loginBtn">تسجيل الدخول</button>
+      <div class="search-box">
+        <input type="text" id="regionSearch" placeholder="ابحث عن منطقة...">
+        <span class="search-icon">🔍</span>
+      </div>
+      <div class="menu">
+        <button class="menu-btn" id="menuBtn">القائمة ☰</button>
+        <div class="dropdown" id="menuDropdown">
+          <a href="#" id="mediaContent"> ▸ المحتوى الإعلامي</a>
+          <div class="dropdown submenu" id="mediaSubmenu" style="display:none;">
+            <a href="/manga.html">مانجا</a>
+            <a href="/podcast.html">بودكاست</a>
+            <a href="/movies.html">أفلام</a>
+          </div>
+          <a href="#" id="expertsPage">خبراء العادات الأصيلة</a>
+          <a href="#" id="eventsPage">الفعاليات</a>
+          <a href="#" id="socialPage">تواصل اجتماعي</a>
+        </div>
+      </div>
+    </div>
+  </nav>
+
+  <!-- Titles -->
+  <div class="titles">
+    <div class="platform-title">المنصة الوطنية للعادات الأصيلة</div>
+    <!-- <div class="main-title">عاداتنا الأصيلة</div> -->
+    <p class="subtitle">نافذتك لاكتشاف العادات الأصيلة عن طريق المانجا </p>
+  </div>
+
+  <!-- Interactive Map -->
+  <section class="map-section">
+  </section>
+
+  <!-- Floating AI Button -->
+  <div class="floating-ai">
+    <button class="floating-ai-btn" title="مساعد الذكاء الاصطناعي">🤖</button>
+  </div>
+
+  <!-- Login Modal -->
+  <div id="loginModal"
+    style="display:none;position:fixed;top:0;right:0;bottom:0;left:0;background:rgba(0,0,0,0.18);z-index:2000;align-items:center;justify-content:center;">
+    <div
+      style="background:#fff;border-radius:12px;max-width:340px;width:90vw;padding:28px 18px 18px 18px;box-shadow:0 2px 16px rgba(23,78,43,0.18);position:relative;">
+      <button onclick="document.getElementById('loginModal').style.display='none'"
+        style="position:absolute;top:10px;left:10px;background:none;border:none;font-size:22px;color:#174e2b;cursor:pointer;">×</button>
+      <h2 style="color:#174e2b;text-align:center;margin-top:0;">تسجيل الدخول</h2>
+      <button
+        style="width:100%;background:#176d4d;color:#fff;padding:10px 0;border:none;border-radius:6px;font-size:17px;margin-bottom:12px;">دخول
+        عبر نفاذ</button>
+      <div style="text-align:center;color:#aaa;margin:8px 0 8px 0;">أو</div>
+      <button
+        style="width:100%;background:#ffcc70;color:#174e2b;padding:10px 0;border:none;border-radius:6px;font-size:17px;margin-bottom:10px;">دخول
+        شركات</button>
+      <button
+        style="width:100%;background:#ffcc70;color:#174e2b;padding:10px 0;border:none;border-radius:6px;font-size:17px;">دخول
+        خبراء العادات الأصيلة</button>
+    </div>
+  </div>
+
+  <footer>
+    © 2025 جميع الحقوق محفوظة - المنصة الوطنية للعادات الأصيلة
+  </footer>
+
+  <script src="script.js"></script>
+  <script>
+    // Regions coordinates (relative to map.png, adjust as needed)
+    const regionCoords = [
+      { top: 190, left: 230 }, // الرياض
+      { top: 220, left: 145 }, // مكة
+      { top: 160, left: 120 },  // المدينة
+      { top: 130, left: 185 }, // القصيم
+      { top: 190, left: 310 }, // الشرقية
+      { top: 265, left: 183 }, // عسير
+      { top: 90, left: 60 },   // تبوك
+      { top: 100, left: 160 },  // حائل
+      { top: 60, left: 200 },  // الحدود الشمالية
+      { top: 300, left: 180 }, // جازان
+      { top: 284, left: 235 }, // نجران
+      { top: 255, left: 155 },  // الباحة
+      { top: 45, left: 105 },  // الجوف
+    ];
+    // Inject pins on map
+    window.addEventListener('DOMContentLoaded', function () {
+      const map = document.getElementById('saudiMapContainer');
+      if (typeof regions !== 'undefined') {
+        regions.forEach((name, i) => {
+          const pin = document.createElement('div');
+          pin.className = 'region-pin';
+          const coords = regionCoords[i] || { top: 100, left: 100 };
+          pin.style.top = coords.top + 'px';
+          pin.style.left = coords.left + 'px';
+          pin.innerHTML = `<span style='font-size:15px;'>📍</span><span class='tooltip'>${name}</span>`;
+          pin.onclick = () => { window.location.href = `region.html?id=${i}`; };
+          map.appendChild(pin);
+        });
+      }
+    });
+    // Search region
+    document.getElementById('regionSearch').addEventListener('keydown', function (e) {
+      if (e.key === 'Enter') {
+        const val = this.value.trim();
+        if (!val) return;
+        const idx = regions.findIndex(r => r.replace(/\s/g, '').includes(val.replace(/\s/g, '')));
+        if (idx !== -1) {
+          window.location.href = `region.html?id=${idx}`;
+        } else {
+          alert('لم يتم العثور على المنطقة');
+        }
+      }
+    });
+    // Login modal
+    document.getElementById('loginBtn').onclick = function () {
+      document.getElementById('loginModal').style.display = 'flex';
+    };
+    // Menu dropdown
+    const menuBtn = document.getElementById('menuBtn');
+    const menuDropdown = document.getElementById('menuDropdown');
+    menuBtn.onclick = function (e) {
+      e.stopPropagation();
+      menuDropdown.classList.toggle('show');
+    };
+    document.body.addEventListener('click', function (e) {
+      if (!menuDropdown.contains(e.target) && e.target !== menuBtn) {
+        menuDropdown.classList.remove('show');
+        document.getElementById('mediaSubmenu').style.display = 'none';
+      }
+    });
+    // Media submenu
+    document.getElementById('mediaContent').onclick = function (e) {
+      e.preventDefault();
+      const sub = document.getElementById('mediaSubmenu');
+      sub.style.display = sub.style.display === 'block' ? 'none' : 'block';
+    };
+    // Floating AI button
+    document.querySelector('.floating-ai-btn').onclick = function () {
+      alert('مرحبًا! كيف يمكنني مساعدتك اليوم؟');
+    };
+    // Menu navigation (dummy)
+    document.getElementById('expertsPage').onclick = function () { alert('صفحة خبير العادات الأصيلة (تجريبية)'); };
+    document.getElementById('eventsPage').onclick = function () { alert('صفحة الفعاليات (تجريبية)'); };
+    document.getElementById('socialPage').onclick = function () { alert('صفحة التواصل الاجتماعي (تجريبية)'); };
+  </script>
+</body>
+
+</html>
