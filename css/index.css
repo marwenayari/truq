@@ -224,6 +224,7 @@ body {
 
 .floating-ai,
 .floating-access {
+  cursor: pointer;
   position: fixed;
   left: 24px;
   bottom: 32px;
