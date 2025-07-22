@@ -14,13 +14,12 @@
   <!-- Navigation Bar -->
   <nav class="navbar">
     <div class="logo">
-      <img src="img/avatar.png" alt="شعار" style="height:36px;width:36px;border-radius:50%;background:#fff;">
-      <a href="index.html" style="color:inherit;text-decoration:none;font-weight:bold;font-size:18px;">عاداتنا
-        الأصيلة</a>
+      <!-- <img src="img/avatar.png" alt="شعار" style="height:36px;width:36px;border-radius:50%;background:#fff;"> -->
+      <a href="index.html" style="color:inherit;text-decoration:none;font-weight:bold;font-size:18px;"></a>
       <a href="">
         <span class="guidelinlk-wrapper" style="position:relative;display:inline-block;">
           <img src="img/guide.png" class="guidelinlk" alt="دليل">
-          <span class="guidelinlk-tooltip">دليل العادات المشتركة</span>
+          <span class="guidelinlk-tooltip">دليل العادات السعودية الأصيلة</span>
         </span>
       </a>
     </div>
@@ -33,34 +32,45 @@
       <div class="menu">
         <button class="menu-btn" id="menuBtn">القائمة ☰</button>
         <div class="dropdown" id="menuDropdown">
-          <a href="#" id="mediaContent"> ▸ المحتوى الإعلامي</a>
+          <a href="#" id="mediaContent"> ▸ المحتوى الثقافي</a>
           <div class="dropdown submenu" id="mediaSubmenu" style="display:none;">
             <a href="/manga.html">مانجا</a>
             <a href="/podcast.html">بودكاست</a>
             <a href="/movies.html">أفلام</a>
           </div>
-          <a href="#" id="expertsPage">خبراء العادات الأصيلة</a>
-          <a href="#" id="eventsPage">الفعاليات</a>
-          <a href="#" id="socialPage">تواصل اجتماعي</a>
+          <a href="/experts.html" id="expertsPage">خبراء العادات الأصيلة</a>
+          <a href="/activities.html" id="eventsPage">الأنشطة</a>
+          <a href="/contact.html" id="socialPage">تواصل اجتماعي</a>
+          <a href="#" id="socialPage">كيف تصبح خبيرا</a>
+          <a href="https://cup.moc.gov.sa/" target="_blank" target="_blank" id="socialPage">كون الثقافية</a>
         </div>
       </div>
     </div>
   </nav>
 
+  <section class="location-section">
+    <div class="location-info">
+      <img src="img/location.jpg" alt="">
+      <a href="/region.html?id=0">
+        <span>أنت الآن في الرياض</span>
+      </a>
+    </div>
+  </section>
+
   <!-- Titles -->
   <div class="titles">
     <div class="platform-title">المنصة الوطنية للعادات الأصيلة</div>
-    <!-- <div class="main-title">عاداتنا الأصيلة</div> -->
-    <p class="subtitle">نافذتك لاكتشاف العادات الأصيلة وتعزيز الهوية السعودية</p>
+    <!-- <div class="main-title"></div> -->
+    <p class="subtitle">نافذتك لاكتشاف العادات الأصيلة السعودية</p>
   </div>
 
   <!-- Banner Section -->
   <section class="main-banner">
     <img src="img/banner.jpg" alt="بانر العادات" class="banner-img">
     <div class="banner-overlay">
-      <h2 class="banner-title">عادات المملكة في مكان واحد</h2>
-      <p class="banner-subtitle">اكتشف تفاصيل كل منطقة<br>وعاداتها اليومية في منصتنا</p>
-      <a href="#map-section" class="banner-btn">اكتشف في الخريطة</a>
+      <h2 class="banner-title">عاداتنا هويتنا</h2>
+      <p class="banner-subtitle">تعلم تشارك تفاعل</p>
+      <a href="#map-section" class="banner-btn">اكتشف تنوع أصالتنا</a>
     </div>
   </section>
 
@@ -75,7 +85,9 @@
 
   <!-- Floating AI Button -->
   <div class="floating-ai">
-    <button class="floating-ai-btn" title="مساعد الذكاء الاصطناعي">🤖</button>
+    <button class="floating-ai-btn" title="مساعد الذكاء الاصطناعي">
+      <span>AI</span>
+    </button>
   </div>
 
   <!-- Login Modal -->
@@ -131,8 +143,42 @@
           const coords = regionCoords[i] || { top: 100, left: 100 };
           pin.style.top = coords.top + 'px';
           pin.style.left = coords.left + 'px';
-          pin.innerHTML = `<span style='font-size:15px;'>📍</span><span class='tooltip'>${name}</span>`;
-          pin.onclick = () => { window.location.href = `region.html?id=${i}`; };
+          pin.innerHTML = `<span style='font-size:15px;'>
+            <img src='img/blackpin.jpg' alt='📍'>
+            </span><span class='tooltip' style='display:none;cursor:pointer;'>${name}</span>`;
+
+          const tooltip = pin.querySelector('.tooltip');
+
+          // Show tooltip on hover
+          pin.addEventListener('mouseenter', () => {
+            tooltip.style.display = 'block';
+          });
+          // pin.addEventListener('mouseleave', () => {
+          //   tooltip.style.display = 'none';
+          // });
+
+          // Show tooltip on click (for mobile)
+          pin.addEventListener('click', (e) => {
+            // Only show tooltip if not already visible
+            if (tooltip.style.display !== 'block') {
+              tooltip.style.display = 'block';
+              e.stopPropagation();
+            }
+          });
+
+          // Hide tooltip when clicking elsewhere
+          document.addEventListener('click', function hideTooltip(ev) {
+            if (!pin.contains(ev.target)) {
+              tooltip.style.display = 'none';
+            }
+          });
+
+          // Redirect when clicking the tooltip
+          tooltip.addEventListener('click', (e) => {
+            e.stopPropagation();
+            window.location.href = `region.html?id=${i}`;
+          });
+
           map.appendChild(pin);
         });
       }
@@ -178,9 +224,9 @@
       alert('مرحبًا! كيف يمكنني مساعدتك اليوم؟');
     };
     // Menu navigation (dummy)
-    document.getElementById('expertsPage').onclick = function () { alert('صفحة خبير العادات الأصيلة (تجريبية)'); };
-    document.getElementById('eventsPage').onclick = function () { alert('صفحة الفعاليات (تجريبية)'); };
-    document.getElementById('socialPage').onclick = function () { alert('صفحة التواصل الاجتماعي (تجريبية)'); };
+    // document.getElementById('expertsPage').onclick = function () { alert('صفحة خبير العادات الأصيلة (تجريبية)'); };
+    // document.getElementById('eventsPage').onclick = function () { alert('صفحة الأنشطة (تجريبية)'); };
+    // document.getElementById('socialPage').onclick = function () { alert('صفحة التواصل الاجتماعي (تجريبية)'); };
   </script>
 </body>
 

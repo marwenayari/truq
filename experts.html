@@ -1,0 +1,187 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+
+<head>
+  <meta charset="UTF-8" />
+  <title>بروفايلات خبراء العادات الأصيلة</title>
+  <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@400;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.5/font/bootstrap-icons.css">
+  <style>
+    body {
+      font-family: 'Cairo', sans-serif;
+      background-color: #d0d0c6;
+      margin: 0;
+      padding: 30px;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+    }
+
+    .profile-card {
+      background-color: white;
+      width: 360px;
+      border-radius: 20px;
+      box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+      position: relative;
+      overflow: hidden;
+      text-align: center;
+      margin-bottom: 40px;
+      padding: 25px 20px 30px;
+    }
+
+    .profile-header {
+      position: relative;
+      margin-bottom: 10px;
+    }
+
+    .message-icon {
+      position: absolute;
+      top: -10px;
+      left: -10px;
+      background-color: #dff5e2;
+      color: #28a745;
+      border-radius: 50%;
+      width: 38px;
+      height: 38px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 18px;
+      box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    }
+
+    .status-dot {
+      position: absolute;
+      top: 5px;
+      right: 5px;
+      width: 14px;
+      height: 14px;
+      border-radius: 50%;
+      border: 2px solid white;
+    }
+
+    .profile-img {
+      width: 110px;
+      height: 110px;
+      border-radius: 50%;
+      object-fit: cover;
+      border: 3px solid #eee;
+      margin: 10px auto;
+    }
+
+    .status-text {
+      font-size: 13px;
+      color: #888;
+      margin-top: -5px;
+      margin-bottom: 10px;
+    }
+
+    .status-online {
+      color: #28a745;
+      font-weight: bold;
+    }
+
+    .status-offline {
+      color: gray;
+      font-weight: bold;
+    }
+
+    .name {
+      font-size: 20px;
+      font-weight: bold;
+      color: #1f1f1f;
+      margin-bottom: 15px;
+    }
+
+    .badge {
+      font-size: 14px;
+      display: inline-flex;
+      align-items: center;
+      gap: 4px;
+      margin-bottom: 20px;
+    }
+
+    .silver-star {
+      color: silver;
+    }
+
+    .gold-star {
+      color: goldenrod;
+    }
+
+    .btn-book {
+      background-color: #28a745;
+      color: white;
+      font-size: 16px;
+      border: none;
+      padding: 10px 24px;
+      border-radius: 10px;
+      cursor: pointer;
+      margin-bottom: 15px;
+    }
+
+    .live-session {
+      font-size: 14px;
+      color: white;
+      padding: 10px 15px;
+      border-radius: 10px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 8px;
+      margin-top: 10px;
+    }
+
+    .live-red {
+      background-color: #dc3545;
+    }
+
+    .live-blue {
+      background-color: #007bff;
+    }
+  </style>
+</head>
+
+<body>
+
+  <!-- بروفايل الأصيل أبو فلان -->
+  <div class="profile-card">
+    <div class="profile-header">
+      <div class="message-icon" title="تواصل معي"><i class="bi bi-chat-dots-fill"></i></div>
+      <div class="status-dot" style="background-color: #28a745;"></div>
+      <img class="profile-img" src="https://b.top4top.io/s_34902ja323.png" alt="الأصيل أبو فلان">
+    </div>
+    <div class="status-text"><span class="status-online">متصل</span></div>
+    <div class="name">
+      الأصيل أبو فلان
+      <span class="badge"><i class="bi bi-star-fill silver-star"></i> خبير معتمد</span>
+    </div>
+    <button class="btn-book">احجز</button>
+    <div class="live-session live-red">
+      <i class="bi bi-broadcast-pin"></i>
+      ليش أبواب حايل دايم مفتوحة
+    </div>
+  </div>
+
+  <!-- بروفايل الأصيلة أم فلان -->
+  <div class="profile-card">
+    <div class="profile-header">
+      <div class="message-icon" title="تواصل معي"><i class="bi bi-chat-dots-fill"></i></div>
+      <div class="status-dot" style="background-color: gray;"></div>
+      <img class="profile-img" src="https://d.top4top.io/s_3490nx3c90.png" alt="الأصيلة أم فلان">
+    </div>
+    <div class="status-text"><span class="status-offline">غير متصل</span></div>
+    <div class="name">
+      الأصيلة أم فلان
+      <span class="badge"><i class="bi bi-star-fill gold-star"></i> خبيرة متميزة</span>
+    </div>
+    <button class="btn-book">احجز</button>
+    <div class="live-session live-blue">
+      <i class="bi bi-broadcast-pin"></i>
+      ليلة الحناء يوم الثلاثاء ١٦/٢
+    </div>
+  </div>
+
+</body>
+
+</html>

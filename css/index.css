@@ -1,5 +1,5 @@
 body {
-  background: #fdfcf8;
+  background: #d0d0c6;
   font-family: "Cairo", sans-serif;
   margin: 0;
   color: #1f2e1e;
@@ -69,6 +69,7 @@ body {
 }
 
 .navbar .menu-btn {
+  font-family: "Cairo", sans-serif;
   background: #176d4d;
   color: #fff;
   border: none;
@@ -176,7 +177,7 @@ body {
   position: absolute;
   width: 28px;
   height: 28px;
-  background: #ffcc70;
+  background: #d0d0c6;
   border: 2px solid #176d4d;
   border-radius: 50%;
   cursor: pointer;
@@ -208,6 +209,13 @@ body {
   font-size: 14px;
   white-space: nowrap;
   pointer-events: none;
+}
+
+.region-pin img {
+  width: 30px;
+  height: 30px;
+  object-fit: cover;
+  border-radius: 50%;
 }
 
 .region-pin:hover .tooltip {
@@ -297,10 +305,10 @@ footer {
   display: inline-block;
 }
 .guidelinlk-tooltip {
-  display: none;
+  display: block;
   position: absolute;
   bottom: 5px;
-  right: 110px;
+  right: 130px;
   transform: translateX(50%);
   background: #317c4d;
   color: #fff;
@@ -363,8 +371,9 @@ footer {
 }
 .banner-subtitle {
   color: #104430;
-  font-size: 1.25rem;
+  font-size: 19px;
   font-weight: 500;
+  margin-top: 0;
   margin-bottom: 18px;
   line-height: 1.2;
   /* background: rgba(255, 255, 255, 0.7); */
@@ -405,4 +414,40 @@ footer {
     font-size: 1rem;
     padding: 10px 18px;
   }
+}
+
+.location-section {
+  right: 0;
+  width: 100%;
+  color: #fff;
+  padding: 10px 0;
+  text-align: center;
+}
+.location-section .location-info {
+  display: flex;
+  align-items: center;
+  justify-content: start;
+  gap: 10px;
+  margin: 50px 50px 0 50px;
+}
+.location-info a {
+  text-decoration: none;
+  color: #fff;
+  transition: color 0.2s, text-shadow 0.2s;
+}
+.location-section .location-info img {
+  width: 44px;
+  height: 44px;
+  border-radius: 50%;
+  object-fit: cover;
+}
+.location-section .location-info span {
+  font-size: 22px;
+  font-weight: bold;
+  color: #fff;
+  text-shadow: 0 1px 2px rgba(0, 0, 0, 0.5);
+}
+.location-section .location-info span:hover {
+  color: #fff;
+  text-shadow: 0 1px 2px rgba(0, 0, 0, 1);
 }

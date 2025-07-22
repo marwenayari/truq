@@ -14,13 +14,12 @@
   <!-- Navigation Bar -->
   <nav class="navbar">
     <div class="logo">
-      <img src="img/avatar.png" alt="شعار" style="height:36px;width:36px;border-radius:50%;background:#fff;">
-      <a href="index.html" style="color:inherit;text-decoration:none;font-weight:bold;font-size:18px;">عاداتنا
-        الأصيلة</a>
+      <!-- <img src="img/avatar.png" alt="شعار" style="height:36px;width:36px;border-radius:50%;background:#fff;"> -->
+      <a href="index.html" style="color:inherit;text-decoration:none;font-weight:bold;font-size:18px;"></a>
       <a href="">
         <span class="guidelinlk-wrapper" style="position:relative;display:inline-block;">
           <img src="img/guide.png" class="guidelinlk" alt="دليل">
-          <span class="guidelinlk-tooltip">دليل العادات المشتركة</span>
+          <span class="guidelinlk-tooltip">دليل العادات السعودية الأصيلة</span>
         </span>
       </a>
     </div>
@@ -33,15 +32,17 @@
       <div class="menu">
         <button class="menu-btn" id="menuBtn">القائمة ☰</button>
         <div class="dropdown" id="menuDropdown">
-          <a href="#" id="mediaContent"> ▸ المحتوى الإعلامي</a>
+          <a href="#" id="mediaContent"> ▸ المحتوى الثقافي</a>
           <div class="dropdown submenu" id="mediaSubmenu" style="display:none;">
             <a href="/manga.html">مانجا</a>
             <a href="/podcast.html">بودكاست</a>
             <a href="/movies.html">أفلام</a>
           </div>
-          <a href="#" id="expertsPage">خبراء العادات الأصيلة</a>
-          <a href="#" id="eventsPage">الفعاليات</a>
-          <a href="#" id="socialPage">تواصل اجتماعي</a>
+          <a href="/experts.html" id="expertsPage">خبراء العادات الأصيلة</a>
+          <a href="/activities.html" id="eventsPage">الأنشطة</a>
+          <a href="/contact.html" id="socialPage">تواصل اجتماعي</a>
+          <a href="#" id="socialPage">كيف تصبح خبيرا</a>
+          <a href="https://cup.moc.gov.sa/" target="_blank" id="socialPage">كون الثقافية</a>
         </div>
       </div>
     </div>
@@ -50,7 +51,7 @@
   <!-- Titles -->
   <div class="titles">
     <div class="platform-title">المنصة الوطنية للعادات الأصيلة</div>
-    <!-- <div class="main-title">عاداتنا الأصيلة</div> -->
+    <!-- <div class="main-title"></div> -->
     <p class="subtitle">نافذتك لاكتشاف العادات الأصيلة عن طريق المانجا </p>
   </div>
 
@@ -60,7 +61,7 @@
 
   <!-- Floating AI Button -->
   <div class="floating-ai">
-    <button class="floating-ai-btn" title="مساعد الذكاء الاصطناعي">🤖</button>
+    <button class="floating-ai-btn" title="مساعد الذكاء الاصطناعي">AI</button>
   </div>
 
   <!-- Login Modal -->
@@ -163,9 +164,9 @@
       alert('مرحبًا! كيف يمكنني مساعدتك اليوم؟');
     };
     // Menu navigation (dummy)
-    document.getElementById('expertsPage').onclick = function () { alert('صفحة خبير العادات الأصيلة (تجريبية)'); };
-    document.getElementById('eventsPage').onclick = function () { alert('صفحة الفعاليات (تجريبية)'); };
-    document.getElementById('socialPage').onclick = function () { alert('صفحة التواصل الاجتماعي (تجريبية)'); };
+    // document.getElementById('expertsPage').onclick = function () { alert('صفحة خبير العادات الأصيلة (تجريبية)'); };
+    // document.getElementById('eventsPage').onclick = function () { alert('صفحة الأنشطة (تجريبية)'); };
+    // document.getElementById('socialPage').onclick = function () { alert('صفحة التواصل الاجتماعي (تجريبية)'); };
   </script>
 </body>
 

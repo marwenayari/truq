@@ -3,7 +3,7 @@
 
 <head>
   <meta charset="UTF-8" />
-  <title>عاداتنا الأصيلة</title>
+  <title></title>
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@400;600&display=swap" rel="stylesheet">
   <style>
@@ -141,18 +141,18 @@
       margin-top: 40px;
     }
   </style>
+  <link rel="stylesheet" href="css/region.css">
 </head>
 
 <body>
   <nav>
     <div class="logo">
-      <img src="img/avatar.png" alt="شعار عاداتنا الأصيلة" />
-      <a href="index.html" style="color:inherit;text-decoration:none;font-weight:bold;font-size:18px;">عاداتنا
-        الأصيلة</a>
+      <!-- <img src="img/avatar.png" alt="شعار " /> -->
+      <a href="index.html" style="color:inherit;text-decoration:none;font-weight:bold;font-size:18px;"></a>
       <a href="">
         <span class="guidelinlk-wrapper" style="position:relative;display:inline-block;">
           <img src="img/guide.png" class="guidelinlk" alt="دليل">
-          <span class="guidelinlk-tooltip">دليل العادات المشتركة</span>
+          <span class="guidelinlk-tooltip">دليل العادات السعودية الأصيلة</span>
         </span>
       </a>
     </div>
@@ -168,18 +168,19 @@
     <p id="regionSubtitle">نافذتك لاكتشاف العادات الأصيلة في هذه المنطقة</p>
   </header>
 
-  ‎ <!-- الصفحة الرئيسية -->
+  <!-- الصفحة الرئيسية -->
   <section class="section" id="main">
     <h2>الأقسام الرئيسية</h2>
 
-    ‎ <!-- فلتر المرحلة الدراسية -->
+    <!-- فلتر المرحلة الدراسية -->
     <div class="filter-block">
-      <label for="grade-level">اختر المرحلة الدراسية:</label>
-      <select id="grade-level" name="grade-level">
-        <option value="">-- اختر المرحلة --</option>
-        <option value="1">أول ابتدائي</option>
-        <option value="2">ثاني ابتدائي</option>
-        <option value="3">ثالث ابتدائي</option>
+      <label for="age-group">اختر الفئة العمرية:</label>
+      <select id="age-group" name="age-group">
+        <option value="">-- اختر الفئة --</option>
+        <option value="adults">بالغين</option>
+        <option value="teens">مراهقين</option>
+        <option value="kids">أطفال</option>
+        <option value="seniors">كبار سن</option>
       </select>
     </div>
 
@@ -198,27 +199,23 @@
         <img src="https://www.aljawharamag.com/aljawhara/uploads/2024/07/1707926473-0.jpg" />
         <h3>الزي التقليدي</h3>
       </div>
-      <div class="card" onclick="location.href='#osra'">
-        <img src="https://jehat.net/media/lib/pics/1701562772.png" />
-        <h3>الأسرة والعلاقات</h3>
-      </div>
-      <div class="card" onclick="location.href='#sahra'">
+      <div class="card" onclick="location.href='#amthal'">
         <img
-          src="https://www.almrsal.com/wp-content/uploads/2018/10/%D8%AA%D8%B9%D8%A8%D9%8A%D8%B1-%D8%B9%D9%86-%D8%A7%D9%84%D8%AC%D9%85%D9%84-%D8%B3%D9%81%D9%8A%D9%86%D8%A9-%D8%A7%D9%84%D8%B5%D8%AD%D8%B1%D8%A7%D8%A1.jpg" />
-        <h3>الصحراء والهوية</h3>
+          src="https://aboutmsr.com/wp-content/uploads/2025/01/%D9%8A%D9%88%D9%85-%D8%A7%D9%84%D8%AA%D8%A3%D8%B3%D9%8A%D8%B3-%D8%A7%D9%84%D8%B3%D8%B9%D9%88%D8%AF%D9%8A-780x470.jpg" />
+        <h3>أمثال شعبية</h3>
+      </div>
+      <div class="card" onclick="location.href='#asateer'">
+        <img src="https://jehat.net/media/lib/pics/1701562772.png" />
+        <h3>الأساطير</h3>
       </div>
       <div class="card" onclick="location.href='#ardna'">
         <img src="https://www.moc.gov.sa/-/media/Project/Ministries/Moc/Cultural-Lens/CuluralLens-Aug/Palm-Oasis.jpg" />
-        <h3>أرضنا</h3>
-      </div>
-      <div class="card" onclick="location.href='#qiyam'">
-        <img src="https://blog.bayut.sa/uploads/2023/11/kry-ashykr-3-1.jpg" />
-        <h3>القيم الاجتماعية</h3>
+        <h3>نحن والأرض</h3>
       </div>
     </div>
   </section>
 
-  ‎ <!-- صفحة الضيافة -->
+  <!-- صفحة الضيافة -->
   <section class="section" id="diyafa">
     <h2>الضيافة</h2>
     <div class="grid">
@@ -236,7 +233,7 @@
     <a href="#main" class="back-button">⬅ رجوع</a>
   </section>
 
-  ‎ <!-- المناسبات الاجتماعية -->
+  <!-- المناسبات الاجتماعية -->
   <section class="section" id="monasabat">
     <h2>المناسبات الاجتماعية</h2>
     <div class="grid">
@@ -256,91 +253,74 @@
     <a href="#main" class="back-button">⬅ رجوع</a>
   </section>
 
-  ‎ <!-- الزي التقليدي -->
+  <!-- الزي التقليدي -->
   <section class="section" id="zi">
     <h2>الزي التقليدي</h2>
     <div class="grid">
-      <div class="card"><img src="https://www.aljawharamag.com/aljawhara/uploads/2024/07/1707926473-0.jpg">
+      <div class="card"><img src="https://jehat.net/media/lib/pics/1701562772.png">
         <h3>زي الرجال</h3>
       </div>
-      <div class="card"><img src="https://jehat.net/media/lib/pics/1701562772.png">
+      <div class="card"><img src="https://www.aljawharamag.com/aljawhara/uploads/2024/07/1707926473-0.jpg">
         <h3>زي النساء</h3>
       </div>
-    </div>
-    <a href="#main" class="back-button">⬅ رجوع</a>
-  </section>
-
-  ‎ <!-- الأسرة والعلاقات -->
-  <section class="section" id="osra">
-    <h2>الأسرة والعلاقات</h2>
-    <div class="grid">
-      <div class="card"><img src="https://jehat.net/media/lib/pics/1701562772.png">
-        <h3>الروابط الأسرية</h3>
-      </div>
-      <div class="card"><img src="https://blog.bayut.sa/uploads/2023/11/kry-ashykr-3-1.jpg">
-        <h3>التربية</h3>
-      </div>
-    </div>
-    <a href="#main" class="back-button">⬅ رجوع</a>
-  </section>
-
-  ‎ <!-- الصحراء والهوية -->
-  <section class="section" id="sahra">
-    <h2>الصحراء والهوية</h2>
-    <div class="grid">
       <div class="card"><img
-          src="https://www.almrsal.com/wp-content/uploads/2018/10/%D8%AA%D8%B9%D8%A8%D9%8A%D8%B1-%D8%B9%D9%86-%D8%A7%D9%84%D8%AC%D9%85%D9%84-%D8%B3%D9%81%D9%8A%D9%86%D8%A9-%D8%A7%D9%84%D8%B5%D8%AD%D8%B1%D8%A7%D8%A1.jpg">
-        <h3>الإبل</h3>
-      </div>
-      <div class="card"><img src="https://www.moc.gov.sa/-/media/Project/Ministries/Moc/Cultural-Lens/Turaif.jpeg">
-        <h3>بيت الشعر</h3>
-      </div>
-      <div class="card"><img
-          src="https://www.moc.gov.sa/-/media/Project/Ministries/Moc/Cultural-Lens/CuluralLens-Aug/Music-session.jpg">
-        <h3>الشعر النبطي</h3>
+          src="https://aboutmsr.com/wp-content/uploads/2025/01/%D9%8A%D9%88%D9%85-%D8%A7%D9%84%D8%AA%D8%A3%D8%B3%D9%8A%D8%B3-%D8%A7%D9%84%D8%B3%D8%B9%D9%88%D8%AF%D9%8A-780x470.jpg">
+        <h3>أزياء الأطفال</h3>
       </div>
     </div>
     <a href="#main" class="back-button">⬅ رجوع</a>
   </section>
 
-  ‎ <!-- أرضنا -->
+  <!-- أمثال شعبية -->
+  <section class="section" id="amthal">
+    <h2>أمثال شعبية</h2>
+    <div class="grid">
+      <div class="card">
+        <img
+          src="https://aboutmsr.com/wp-content/uploads/2025/01/%D9%8A%D9%88%D9%85-%D8%A7%D9%84%D8%AA%D8%A3%D8%B3%D9%8A%D8%B3-%D8%A7%D9%84%D8%B3%D8%B9%D9%88%D8%AF%D9%8A-780x470.jpg">
+        <h3>يا من شرى له من حلاله علة</h3>
+      </div>
+    </div>
+    <a href="#main" class="back-button">⬅ رجوع</a>
+  </section>
+
+  <!-- الأساطير -->
+  <section class="section" id="asateer">
+    <h2>الأساطير</h2>
+    <div class="grid">
+      <div class="card">
+        <img src="https://jehat.net/media/lib/pics/1701562772.png">
+        <h3>أم السعف والليف</h3>
+      </div>
+      <div class="card">
+        <img src="https://iqraa.albiladdaily.com/wp-content/uploads/2018/12/thumbnail_qasim.jpg">
+        <h3>الدنجيرة</h3>
+      </div>
+    </div>
+    <a href="#main" class="back-button">⬅ رجوع</a>
+  </section>
+
+  <!-- نحن والأرض -->
   <section class="section" id="ardna">
-    <h2>أرضنا</h2>
+    <h2>نحن والأرض</h2>
     <div class="grid">
-      <div class="card"><img
-          src="https://www.moc.gov.sa/-/media/Project/Ministries/Moc/Cultural-Lens/CuluralLens-Aug/Palm-Oasis.jpg">
-        <h3>النخيل</h3>
+      <div class="card">
+        <img src="img/earth.png">
+        <h3>الأرض</h3>
       </div>
-      <div class="card"><img
-          src="https://www.moc.gov.sa/-/media/Project/Ministries/Moc/Cultural-Lens/CuluralLens-Aug/Shaqra-village.jpg">
-        <h3>بيوت الطين</h3>
+      <div class="card">
+        <img src="img/heraf.png">
+        <h3>الحرف</h3>
       </div>
-      <div class="card"><img src="https://iqraa.albiladdaily.com/wp-content/uploads/2018/12/thumbnail_qasim.jpg">
+      <div class="card">
+        <img src="/img/aswaq.png">
         <h3>الأسواق الشعبية</h3>
       </div>
     </div>
     <a href="#main" class="back-button">⬅ رجوع</a>
   </section>
 
-  ‎ <!-- القيم الاجتماعية -->
-  <section class="section" id="qiyam">
-    <h2>القيم الاجتماعية</h2>
-    <div class="grid">
-      <div class="card"><img
-          src="https://www.moc.gov.sa/-/media/Project/Ministries/Moc/Cultural-Lens/CuluralLens-Aug/Palm-Oasis.jpg">
-        <h3>الكرم</h3>
-      </div>
-      <div class="card"><img src="https://www.moc.gov.sa/-/media/Project/Ministries/Moc/Cultural-Lens/Turaif.jpeg">
-        <h3>الفزعة</h3>
-      </div>
-      <div class="card"><img src="https://blog.bayut.sa/uploads/2023/11/kry-ashykr-3-1.jpg">
-        <h3>الجيرة</h3>
-      </div>
-    </div>
-    <a href="#main" class="back-button">⬅ رجوع</a>
-  </section>
-
-  ‎ <!-- صفحة تسجيل الدخول -->
+  <!-- صفحة تسجيل الدخول -->
   <section class="section" id="login">
     <h2>تسجيل الدخول</h2>
     <form style="max-width: 400px; margin: auto;">
