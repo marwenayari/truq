@@ -14,7 +14,6 @@
   <!-- Navigation Bar -->
   <nav class="navbar">
     <div class="logo">
-      <!-- <img src="img/avatar.png" alt="شعار" style="height:36px;width:36px;border-radius:50%;background:#fff;"> -->
       <a href="index.html" style="color:inherit;text-decoration:none;font-weight:bold;font-size:18px;"></a>
       <a href="">
         <span class="guidelinlk-wrapper" style="position:relative;display:inline-block;">
@@ -60,7 +59,6 @@
   <!-- Titles -->
   <div class="titles">
     <div class="platform-title">المنصة الوطنية للعادات الأصيلة</div>
-    <!-- <div class="main-title"></div> -->
     <p class="subtitle">نافذتك لاكتشاف العادات الأصيلة السعودية</p>
   </div>
 
@@ -115,8 +113,13 @@
     © 2025 جميع الحقوق محفوظة - المنصة الوطنية للعادات الأصيلة
   </footer>
 
-  <script src="script.js"></script>
   <script>
+    // Example regions (should be defined elsewhere in your project or fetched)
+    // Feel free to edit to your actual 13 regions
+    const regions = [
+      "الرياض", "مكة", "المدينة", "القصيم", "الشرقية", "عسير", "تبوك",
+      "حائل", "الحدود الشمالية", "جازان", "نجران", "الباحة", "الجوف"
+    ];
     // Regions coordinates (relative to map.png, adjust as needed)
     const regionCoords = [
       { top: 190, left: 230 }, // الرياض
@@ -133,9 +136,12 @@
       { top: 255, left: 155 },  // الباحة
       { top: 45, left: 105 },  // الجوف
     ];
+
     // Inject pins on map
     window.addEventListener('DOMContentLoaded', function () {
       const map = document.getElementById('saudiMapContainer');
+      const allPins = [];
+      const allTooltips = [];
       if (typeof regions !== 'undefined') {
         regions.forEach((name, i) => {
           const pin = document.createElement('div');
@@ -143,46 +149,61 @@
           const coords = regionCoords[i] || { top: 100, left: 100 };
           pin.style.top = coords.top + 'px';
           pin.style.left = coords.left + 'px';
-          pin.innerHTML = `<span style='font-size:15px;'>
-            <img src='img/blackpin.jpg' alt='📍'>
-            </span><span class='tooltip' style='display:none;cursor:pointer;'>${name}</span>`;
+          pin.innerHTML = `
+            <span style='font-size:15px;'>
+              <img src='img/blackpin.jpg' alt='📍'>
+            </span>
+            <span onclick="redirecto(${i})" class='tooltip' style='display:none;cursor:pointer;'>${name}</span>
+          `;
 
           const tooltip = pin.querySelector('.tooltip');
+          allPins.push(pin);
+          allTooltips.push(tooltip);
 
-          // Show tooltip on hover
-          pin.addEventListener('mouseenter', () => {
+          // Utility: Hide all tooltips
+          function hideAllTooltips() {
+            allTooltips.forEach(t => t.style.display = 'none');
+          }
+
+          // Show tooltip for only this pin
+          function showTooltip() {
+            hideAllTooltips();
             tooltip.style.display = 'block';
-          });
-          // pin.addEventListener('mouseleave', () => {
-          //   tooltip.style.display = 'none';
-          // });
+          }
 
-          // Show tooltip on click (for mobile)
-          pin.addEventListener('click', (e) => {
-            // Only show tooltip if not already visible
-            if (tooltip.style.display !== 'block') {
-              tooltip.style.display = 'block';
-              e.stopPropagation();
-            }
-          });
+          // Mouse enter: show tooltip, hide others
+          pin.addEventListener('mouseenter', showTooltip);
 
-          // Hide tooltip when clicking elsewhere
-          document.addEventListener('click', function hideTooltip(ev) {
-            if (!pin.contains(ev.target)) {
-              tooltip.style.display = 'none';
-            }
-          });
-
-          // Redirect when clicking the tooltip
-          tooltip.addEventListener('click', (e) => {
+          // Click pin: show tooltip, hide others
+          pin.addEventListener('click', function (e) {
+            console.log(`Clicked region ${i}: ${name}`);
+            showTooltip();
             e.stopPropagation();
             window.location.href = `region.html?id=${i}`;
           });
 
+          // Click tooltip: redirect
+          // tooltip.addEventListener('click', function (e) {
+          //   console.log(`Redirecting to region ${i}: ${name}`);
+          //   e.stopPropagation(); // Prevent document click from firing
+          //   window.location.href = `region.html?id=${i}`;
+          // });
+          // function redirecto(id) {
+          //   window.location.href = `region.html?id=${id}`;
+          // }
+
           map.appendChild(pin);
+        });
+
+        // Clicking anywhere else: hide all tooltips (unless inside any tooltip)
+        document.addEventListener('click', function (e) {
+          // If click inside any tooltip, don't hide
+          if ([...allTooltips].some(t => t.contains(e.target))) return;
+          allTooltips.forEach(t => t.style.display = 'none');
         });
       }
     });
+
     // Search region
     document.getElementById('regionSearch').addEventListener('keydown', function (e) {
       if (e.key === 'Enter') {
@@ -223,10 +244,6 @@
     document.querySelector('.floating-ai-btn').onclick = function () {
       alert('مرحبًا! كيف يمكنني مساعدتك اليوم؟');
     };
-    // Menu navigation (dummy)
-    // document.getElementById('expertsPage').onclick = function () { alert('صفحة خبير العادات الأصيلة (تجريبية)'); };
-    // document.getElementById('eventsPage').onclick = function () { alert('صفحة الأنشطة (تجريبية)'); };
-    // document.getElementById('socialPage').onclick = function () { alert('صفحة التواصل الاجتماعي (تجريبية)'); };
   </script>
 </body>
 
