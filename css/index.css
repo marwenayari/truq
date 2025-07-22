@@ -460,6 +460,7 @@ footer {
 }
 
 .kawn img {
-  width: 30px;
+  width: 100px !important;
+  height: 30px;
   margin-right: 8px;
 }
