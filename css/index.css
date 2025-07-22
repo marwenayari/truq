@@ -222,14 +222,20 @@ body {
   display: block;
 }
 
-.floating-ai {
+.floating-ai,
+.floating-access {
   position: fixed;
   left: 24px;
   bottom: 32px;
   z-index: 1000;
 }
+.floating-access {
+  right: 24px;
+}
 
-.floating-ai-btn {
+.floating-ai-btn,
+.floating-access-btn {
+  cursor: pointer;
   background: #176d4d;
   color: #fff;
   border: none;
@@ -243,6 +249,13 @@ body {
   align-items: center;
   justify-content: center;
   transition: background 0.2s;
+}
+.floating-access-btn {
+  background: #f1f1f1;
+}
+.floating-access-btn img {
+  width: 40px;
+  height: 40px;
 }
 
 .floating-ai-btn:hover {
